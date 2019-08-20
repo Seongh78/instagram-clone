@@ -27,7 +27,11 @@ const Contents = props => {
     <div style={styles.flexWrapper}>
       {/* <h1 key={`post_id_${index}`}>{JSON.stringify(post)}</h1> */}
       {posts.map((post, index) => (
-        <div style={styles.itemWrapper} key={`post_id_${index}`}>
+        <div 
+          style={styles.itemWrapper} 
+          key={`post_id_${index}`}
+          onClick={()=>props.onSetModal()}
+        >
           <img style={styles.image} src={post.url} alt=""/>
         </div>
       ))}

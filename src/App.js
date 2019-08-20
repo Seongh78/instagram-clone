@@ -1,11 +1,12 @@
 import React from 'react';
-import { Navbar, Header, Contents } from './components'
+import { Navbar, Header, Contents, Modal } from './components'
 import { PostApi } from './api'
 
 class App extends React.Component {
 
   state = {
-    posts: null
+    posts: null,
+    isOpenModal: false
   }
 
   componentDidMount() {
@@ -20,10 +21,26 @@ class App extends React.Component {
         {this.state.posts === null ? (
           <h3>Loadding...</h3>
         ) : (
-          <Contents posts={this.state.posts} />
+          <Contents 
+            posts={this.state.posts} 
+            onSetModal={this._handleSetModal} 
+          />
         )}
+        <Modal 
+          isOpen={this.state.isOpenModal} 
+          onClose={(value)=>this._handleSetModal()}  
+        />
       </div>
     );
+  }
+
+  /**
+   * 모달토글함수
+   */
+  _handleSetModal = () => {
+    this.setState(prev => ({
+      isOpenModal: !prev.isOpenModal
+    }))
   }
 
   /**
