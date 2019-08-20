@@ -30,7 +30,7 @@ const Contents = props => {
         <div 
           style={styles.itemWrapper} 
           key={`post_id_${index}`}
-          onClick={()=>props.onSetModal()}
+          onClick={()=>props.onGetPost(post.id)}
         >
           <img style={styles.image} src={post.url} alt=""/>
         </div>

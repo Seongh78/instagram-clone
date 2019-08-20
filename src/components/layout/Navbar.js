@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '../';
 
 const styles = {
   wrapper: {
@@ -13,18 +14,7 @@ const styles = {
     alignItems: 'center',
     justifyContent:'flex-start'
   },
-  searchBar: {
-    width: 300,
-    height: 25,
-    padding: 10,
-    paddingLeft:25,
-    paddingRight:25,
-    marginLeft:25,
-    fontSize: '1.2em',
-    backgroundColor:'#f3f3f3',
-    borderRadius: 25,
-    border:'1px solid #dbdbdb',
-  }
+  
 }
 
 const Navbar = () => {
@@ -33,7 +23,7 @@ const Navbar = () => {
       <div style={styles.container}>
         <h1>Navbar</h1>
         <div>
-          <input placeholder="Search..." type="text" style={styles.searchBar} />
+          <Input placeholder="search..." />
         </div>
       </div>
     </div>

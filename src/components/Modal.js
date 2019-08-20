@@ -28,7 +28,7 @@ const Modal = props => {
     <div style={styles.container}>
       <div style={styles.modalContent}>
         <button onClick={()=>props.onClose(!props.isOpen)}>닫기</button>
-        <h1>Modal</h1>
+        {props.children}
       </div>
     </div>
   );
